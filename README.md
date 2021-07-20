@@ -78,10 +78,10 @@ Projects- This endpoint should return information pertaining to all the projects
     Step 1: git clone
     Step 2: Enter the Project root folder
 
-    cd gallery/
+    cd awwards/
     install virtual environment (venv) without pip
 
-    python3.6 -m venv --without-pip virtual
+    python3.8 -m venv --without-pip virtual
     Step 3: Activate virtual environment
 
     source virtual/bin/activate
@@ -94,7 +94,7 @@ Projects- This endpoint should return information pertaining to all the projects
 
 ## Built With
 
-    Python3.6 - Python is a programming language that lets you work quickly and integrate systems more effectively
+    Python3.8 - Python is a programming language that lets you work quickly and integrate systems more effectively
     Django - Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design
     postgresql - PostgreSQL is a powerful, open source object-relational database system with over 30 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance.
     Versioning
@@ -102,12 +102,12 @@ Projects- This endpoint should return information pertaining to all the projects
 
 ## Bugs
 
-    If you encounter any bugs, email me on melissamalala@gmail.com. If you would like to add some changes, please feel free to
+    If you encounter any bugs, email me on cheruden25@gmail.com. If you would like to add some changes, please feel free to
 fork the project and make a pull request.
 
 ## Authors
 
-MELISSA MALALA
+Dennis Cheruiyot
 
 ## License
 

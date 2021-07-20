@@ -1,4 +1,4 @@
-{%extends "registration/base.html"%} {% load bootstrap4 %} {%load static%} {% block content %}
+{%extends "django_registration/base.html"%} {% load bootstrap4 %} {%load static%} {% block content %}
 
 <div class="container" style="background-color:#fff;
  background-image:('../../static/photos/rawpixel-594846-unsplash.jpg')">
@@ -11,7 +11,7 @@
         <div class="card-body text-center">
           <h5 class="card-title" style="font-family: 'Dosis', cursive;">Have an account already?</h5>
           <h2 style="color:grey;font-size:10px; font-family: 'Dosis', cursive;">By signing up, you agree to our Terms, Data Policy and Cookies Policy.</h2>
-          <a href="/accounts/login" class="btn btn-primary" style="font-family: 'Dosis', cursive;">Login</a>
+          <a href="/accounts/login/" class="btn btn-primary" style="font-family: 'Dosis', cursive;">Login</a>
         </div>
       </div>
 
@@ -38,15 +38,16 @@
         </div>
         <div class="card-body text-primary">
 
-          <form action="/accounts/register/" method="post" style="font-family: 'Dosis', cursive;">
-            {% csrf_token %} {% bootstrap_form form %}
-            <div class="form-group">
-              <input type="submit" class="btn btn-primary btn-sm" value="Sign Up">
-            </div>
+        <form action="/accounts/register/" method="post">
+          {% csrf_token %}
+          {% bootstrap_form form %}
+          <div class="form-group">
+            <input type="submit" class="btn btn-primary btn-sm" value="Sign Up">
+          </div>
 
-            <input type="hidden" name="next" value="{{next}}">
+          <input type="hidden" name="next" value="{{next}}">
 
-          </form>
+        </form>
 
         </div>
 
@@ -77,7 +78,7 @@
           <li>LANGUAGE</li>
           <br>
 
-          <li style="font-size:10px;"> <strong>© 2018 MELISSA MALALA</strong></li>
+          <li style="font-size:10px;"> <strong>© 2021 Dennis Cheruiyot</strong></li>
         </ul>
 
       </div>

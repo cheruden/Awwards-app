@@ -110,7 +110,7 @@ def new_project(request):
 
     else:
         form = NewProjectForm()
-    return render(request, 'registration/new_project.html', {"form": form})
+    return render(request, 'django_registration/new_project.html', {"form": form})
 
 # Viewing a single picture
 
@@ -135,7 +135,7 @@ def edit_profile(request):
 
     else:
         form = UpdatebioForm()
-    return render(request, 'registration/edit_profile.html', {"form": form})
+    return render(request, 'django_registration/edit_profile.html', {"form": form})
 
 @login_required(login_url='/accounts/login/')
 def individual_profile_page(request, username=None):
