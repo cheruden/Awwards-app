@@ -13,6 +13,13 @@ import os
 import dj_database_url
 from decouple import config, Csv
 
+
+
+MODE = config("MODE", default="dev")
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -21,7 +28,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-2m6ij$dpkl8!2t3@u99xgn+r&lr7djue^$pt5w5_mcl%a#eu8u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
