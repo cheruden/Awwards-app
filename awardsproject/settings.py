@@ -6,7 +6,7 @@
 # # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = '4@!@7e#%bgkw9088!k1l3_xnsyf#wh&__(8#=#978y_c8%nxpo'
 # # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
 # ALLOWED_HOSTS = []
 import os
 import django_heroku
@@ -84,6 +84,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+DEBUG = True
+# APPEND_SLASH=False
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 AUTH_PASSWORD_VALIDATORS = [

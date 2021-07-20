@@ -2,6 +2,7 @@ from django.conf.urls import url
 from . import views
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
@@ -30,6 +31,7 @@ urlpatterns = [
         views.review_detail, name='review_detail'),
     # ex: /project/
     url(r'^project$', views.project_list, name='project_list'),
+    url('accounts/login/',auth_views.LoginView.as_view(template_name = 'registration/login.html'),name='login'),
 ]
 
 
