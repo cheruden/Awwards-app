@@ -6,7 +6,7 @@
 # # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = '4@!@7e#%bgkw9088!k1l3_xnsyf#wh&__(8#=#978y_c8%nxpo'
 # # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
+DEBUG = True
 # ALLOWED_HOSTS = []
 import os
 import django_heroku
@@ -77,7 +77,7 @@ TEMPLATES = [
         },
     },
 ]
-WSGI_APPLICATION = 'awardsapp.wsgi.application'
+WSGI_APPLICATION = 'awardproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
