@@ -21,6 +21,8 @@ class tags(models.Model):
 
     def delete_tags(self):
         self.delete()
+
+
 class Location(models.Model):
     name = models.CharField(max_length=30)
 
@@ -86,14 +88,14 @@ class Project(models.Model):
 
 
 
-class Profile(models.Model ):
+class Profile(models.Model):
     class Meta:
         db_table = 'profile'
 
     bio = models.TextField(max_length=200, null=True, blank=True, default="bio")
     profile_pic = models.ImageField(upload_to='picture/', null=True, blank=True, default= 0)
     user=models.OneToOneField(User, on_delete=models.CASCADE, null=True, related_name="profile")
-    project=models.ForeignKey(Project, on_delete=models.CASCADE, null=True)
+    project=models.ForeignKey(Project,on_delete=models.CASCADE, null=True)
     contact=models.IntegerField(default=0)
 
     def create_user_profile(sender, instance, created, **kwargs):
@@ -129,7 +131,7 @@ class Image(models.Model):
     name = models.CharField(max_length=40)
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, related_name="images")
     description=models.TextField()
-    location=models.ForeignKey(Location, on_delete=models.CASCADE,null=True)
+    location=models.ForeignKey(Location,on_delete=models.CASCADE, null=True)
     tags=models.ManyToManyField(tags, blank=True)
     likes = models.IntegerField(default=0)
     comments= models.TextField(blank=True)
