@@ -43,6 +43,20 @@ def home_projects (request):
 
     return render(request, 'index.html', {'projects':projects, 'letterForm':form})
 
+def registration(request):
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            form.save()
+            return redirect('login')
+    else:
+        form = RegisterForm()
+    context = {
+        'form':form,
+    }
+    return render(request, 'django_registration/registration_form.html', context)
+
 def project(request, id):
 
     try:
