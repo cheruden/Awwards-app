@@ -1,4 +1,4 @@
-from django.conf.urls import url, include
+from django.conf.urls import url
 from . import views
 from django.conf.urls.static import static
 from django.conf import settings
@@ -9,6 +9,8 @@ from django_registration.backends.one_step.views import RegistrationView
 urlpatterns = [
 
     url(r'^$', views.home_projects, name='homePage'),
+    url('accounts/register/',RegistrationView.as_view(success_url='/'),name='django_registration_register'),
+    url('accounts/login/',auth_views.LoginView.as_view(template_name = 'registration/login.html'),name='login'),
     # url(r'^search/', views.search_users, name='search_users'),
     url(r'^search/', views.search_projects, name='search_projects'),
     url(r'^image(\d+)', views.project, name='project'),
@@ -32,12 +34,7 @@ urlpatterns = [
         views.review_detail, name='review_detail'),
     # ex: /project/
     url(r'^project$', views.project_list, name='project_list'),
-    url('accounts/login/',auth_views.LoginView.as_view(template_name = 'registration/login.html'),name='login'),
-    url('accounts/register/',RegistrationView.as_view(success_url='/'),name='django_registration_register'),
-    url('accounts/', include('django_registration.backends.one_step.urls')),
-    url('accounts/', include('django.contrib.auth.urls')),
-    # url('accounts/profile/', views.profile, name='profile'),
-    # url('updateprofile/', views.updateprofile, name='edit_profile'),
+    
 
 ]
 
